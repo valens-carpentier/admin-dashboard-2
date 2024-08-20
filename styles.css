@@ -1,8 +1,15 @@
+.roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+
 body,
 html {
   height: 100%;
   margin: 0;
   overflow: auto;
+  font-family: 'Roboto';
 }
 
 :root {
@@ -33,6 +40,18 @@ html {
 .dashboard {
     display: flex;
     align-items: center;
+}
+
+.tabs > div {
+    display: flex;
+    margin-left: 8px;
+    padding: 0.5rem;
+}
+
+.settings > div {
+    display: flex;
+    margin-left: 8px;
+    padding: 0.5rem;
 }
 
 svg {
@@ -84,11 +103,67 @@ svg {
     gap: 10px;
 }
 
+button {
+    border-radius: 16px;
+    background-color: var(--primary-background-blue);
+    border-width: 0;
+    color: #f8fafc;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 32px;
+}
+
+.projects {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background-color: lightgray;
+}
+
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
-    padding: 20px;
+    padding: 15px;
+    padding-top: 4px;
+}
+
+.card {
+    background-color: var(--primary-color-text);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    justify-content: space-between;
+    border-radius: 8px;
+    border-left: 5px solid darkorange;
+}
+
+.projects h3 {
+    margin: 10px 0 6px 8px;
+}
+
+.card h4, .card p {
+    margin: 0 0 0.25rem 0;
+}
+
+.card h4 {
+    font-weight: 500;
+}
+
+.card p {
+    font-size: smaller;
+    font-weight: 300;
+}
+
+.card-icons {
+    margin-top: auto; 
+    display: flex;
+    gap: 0.25rem; 
+    justify-content: right;
+}
+
+.card > div > svg {
+    fill: black;
 }
 
 .username-container {
@@ -125,14 +200,81 @@ svg {
     margin-top: 32px;
 }
 
-.projects {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    background-color: lightcoral;
-}
-
-.announcements {
+.right-grid {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
-    background-color: lightcyan;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    padding-top: 4px;
 }
+
+.first-container h3 {
+    margin: 10px 0 6px 8px;
+}
+
+.second-container h3 {
+    margin: 20px 0 6px 8px;
+}
+
+.first-container, .second-container {
+    background-color: lightgray;
+}
+
+.annoucement-container, .trending-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem 1.5rem 2rem 1.5rem ;
+}
+
+.annoucement-container > div:nth-child(-n+2) {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: black;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.annoucement-container > div > p {
+    font-size: small;
+    font-weight: 300;
+}
+
+.trending-container > div > p {
+    font-size: small;
+    font-weight: 300;
+}
+
+.trending-container > div > img {
+    width: 42px;
+    height: 42px;
+    border-radius: 30px;
+}
+
+.trending-container > div {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.trending-container > div > div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    justify-content: center;
+}
+
+.trending-container > div > div > p {
+    font-size: small;
+    font-weight: 300;
+}
+
+.trending-container > div > div > h6 {
+    font-weight: 500;
+    font-size: medium;
+    padding-bottom: 4px;
+}
+
+
